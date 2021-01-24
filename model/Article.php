@@ -21,6 +21,9 @@ class Article extends Db {
     public function getArticle($id){
         //Requetes SQL SELECT dans la table article pour récupérer un article en particulier (page de détail)
         //TODO: Faire la requete qui permet de récupérer un article
+        $query = $this->db->prepare('SELECT * FROM article WHERE id = ?');
+        $query->execute([$id]);
+        return $query->fetch();
        
     }
 

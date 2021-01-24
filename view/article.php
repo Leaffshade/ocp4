@@ -20,9 +20,11 @@
     </ul>
 </nav>
 
-    <!-- TODO: Afficher le titre et la description d'un article + listing de commentaires -->
+    <!-- TODO: Afficher le titre et la description d'un article + listing de commentaires. 
+    Préparer la mise en forme de cette page articel -->
     
-    <h1>Détail d'un article</h1>
+    <h1><?= $article['title'] ?></h1>
+    <img src="<?= $article['picture'] ?>" width="200"/>
     
 </body>
 </html>
