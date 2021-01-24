@@ -11,5 +11,4 @@ if(!isset( $_GET['action'])){
 }  else if($_GET['action'] == 'article'){
     // Afficher la page de détail d'un article
     article($_GET['article_id']);
-    var_dump('toto');
 }

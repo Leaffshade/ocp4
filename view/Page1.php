@@ -12,7 +12,7 @@
     <body>
 
 <!-- BLOG -->
-<div class="main-container">
+<div class="main-container" >
 
  <?php include_once('header.php'); ?>
 
