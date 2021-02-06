@@ -16,16 +16,12 @@
 
  <?php include_once('header.php'); ?>
 
-<!-- MIDDLE-CONTAINER -->
-<div class="middle-container container d-flex">
-    <div class="block w-75 me-3">
-        <!-- PROFILE (MIDDLE-CONTAINER) -->
-        <div class="profile-picture big-profile-picture clear">
-            <img width="158px" height="150px" alt="Olaf picture"
-                src="\\olaf.jpg">
-        </div>
-        
-        <h1 class="user-name text-center">Olaf</h1>
+
+ <!-- LEFT CONTAINER -->
+ <div class="left-container container d-flex">
+     <div class="block w-10 me-3">
+         <section>
+             <aside>
 
         <ul>
             <?php
@@ -36,13 +32,30 @@
                         </a>
                     </li>
             <?php } ?>
-
         </ul>
+            </aside>
+        </section>
+        
+    </div>
 </div>
-      
+
+
+<!-- MIDDLE-CONTAINER -->
+<div class="middle-container container d-flex">
+    <div class="block w-75 me-3">
+        <!-- PROFILE (MIDDLE-CONTAINER) -->
+        <div class="profile-picture big-profile-picture clear">
+            <img width="158px" height="150px" alt="jeanbigpicture"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcGazpvDy-yzjHZFOXnL1UuXCa2upBJCo3hw&usqp=CAU.jpg">
+        </div>
+        
+        <h1 class="user-name text-center">Jean Forteroche</h1>  
+</div>
+
+<!-- RIGHT CONTAINER -->      
 <!-- Connexion Compte -->
      
-<div class="right-container w-25">
+<div class="right-container w-10">
     <section>  
         <aside> 
             <form action="Page1.php" method="POST">
@@ -85,7 +98,7 @@
     }
     else // Sinon, on affiche un message d'erreur
     {
-        echo '<p>Mot de passe incorrect</p>';
+        // echo '<p>Mot de passe incorrect</p>';
     }
     ?>
 

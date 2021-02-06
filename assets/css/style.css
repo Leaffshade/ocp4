@@ -50,19 +50,23 @@ nav ul
 
 nav li
 {
-    margin-right: 15px;
+	margin-right: 254px;
+padding-left: 27px; /* Espace mots menu */
 }
 
 nav a{
+	position: absolute; /* Permet au menu de s'aligner avec small profil picture */
 	text-decoration: none;
     display: block;
     line-height: 74px; /* centrage  texte menu haut/bas */
 	font-size: 17px;
 	padding-right: 5px;
-	padding-left: 5px;
+	/* padding-left: 5px; */
 }
 
+
 nav.menu a:hover {
+	position: absolute;
 	/* Couleur Menu avec clic */
 	color: #171b2d;
 	/* Couleur ligne du menu */
@@ -70,12 +74,15 @@ nav.menu a:hover {
 	/* bordure bas et couleur petite barre bleue liens du menu */
 	font-size: 17px;
 	/*margin-bottom: 0px; marge bas hover barre bleue */
+	border-radius: 3px;
 	background-color: #9099b7;
 	margin-top: -10px;
 	padding-top: 10px;
 	margin-bottom: -15px;
-	padding-right: 5px;
-	padding-left: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: -10px; /* Pour que le hover ne soit pas en décalé */
+	-webkit-transition: all .3s linear;
 }
 
 .fas, .fab{ /* logos menu fontawesome */
@@ -114,6 +121,20 @@ h2, p, a, span{
 		
 	}
 
+	ul{
+		list-style-type: none; /* retire la puce du menu */
+	}
+
+
+.left-container{
+	background: #394264;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 7px;
+}
+
+
+
 .formulaire { /* Affichage logos formulaire*/
 	position: relative;
 }
@@ -140,18 +161,21 @@ h2, p, a, span{
 
 
 .btn-outline-success {  /*bouton s'identifié */
-    color: white;
+	color: white;
 	border-color: #1f253d;
 	background-color: #1f253d;
 	margin-bottom: 15px;
 	box-shadow: black 1px 1px 3px 1px;
+	-webkit-transition: all .3s linear;
 }
 
 	.btn-outline-success:hover {
 		color: #1f253d;
 		background-color: white;
+		opacity: 0.70;
 		border: black;
-		margin-bottom: 17px;		
+		margin-bottom: 17px;
+				
 	}
 
 .profile-picture {
@@ -159,7 +183,7 @@ h2, p, a, span{
 	overflow: hidden;
 	-webkit-box-sizing: content-box;
   	-moz-box-sizing: content-box;
-  	box-sizing: content-box;	
+	  box-sizing: content-box;	
 }
 	.big-profile-picture {
 		margin: 0 auto;		
@@ -177,7 +201,7 @@ h2, p, a, span{
 		background: #394264;
 		border-radius: 5px;
 		padding-top: 10px;
-		padding-bottom: 7px;
+		padding-bottom: 64px;
 	}
 
 /* MAIN CONTAINER */
