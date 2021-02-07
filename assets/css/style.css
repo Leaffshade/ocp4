@@ -50,12 +50,12 @@ nav ul
 
 nav li
 {
-	margin-right: 254px;
-padding-left: 27px; /* Espace mots menu */
+	/*margin-right: 254px;*/
+	padding-left: 27px; /* Espace mots menu */
 }
 
 nav a{
-	position: absolute; /* Permet au menu de s'aligner avec small profil picture */
+	/*position: absolute;*/ /* Permet au menu de s'aligner avec small profil picture */
 	text-decoration: none;
     display: block;
     line-height: 74px; /* centrage  texte menu haut/bas */
@@ -66,7 +66,7 @@ nav a{
 
 
 nav.menu a:hover {
-	position: absolute;
+	/*position: absolute;*/
 	/* Couleur Menu avec clic */
 	color: #171b2d;
 	/* Couleur ligne du menu */
@@ -138,8 +138,8 @@ h2, p, a, span{
 .formulaire { /* Affichage logos formulaire*/
 	position: relative;
 }
-	input[type=text]{ /* Encadrés texte formulaire */
-		width: 100%;
+	input[type="text"]{ /* Encadrés texte formulaire */
+		width: auto !important;
 		height: 50px;
 		/*margin-bottom: 20px;*/
 		padding-left: 10px;
@@ -214,6 +214,32 @@ h2, p, a, span{
 
 .container{ /* bloc articles */
 	margin-bottom: 15px;
+}
+
+.block-title{
+	background: #11A8AB;
+	margin-top: -10px;
+	border-radius: 5px 5px 0 0;
+	padding: 10px 0;
+	font-weight: bolder;
+}
+
+.block-title h2 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.articles-list li {
+	border-bottom: 1px solid #1F253D;
+}
+
+.articles-list li a {
+	transition: background-color .5s ease-in;
+}
+
+.articles-list li a:hover {
+	background-color: #50597b;
+	color: white;
 }
 
 	
