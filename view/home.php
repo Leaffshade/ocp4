@@ -14,8 +14,8 @@
 <!-- BLOG -->
 <div class="main-container">
 
- <?php include_once('header.php'); ?>
-
+<?php include_once('header.php'); ?>
+     
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container d-flex flex-wrap flex-md-nowrap">
@@ -33,18 +33,42 @@
                             <?= $article['title'] ?>
                         </a>
                     </li>
+
+
+
+
+
             <?php } ?>
+
+
+
+
+
+
+
+
+            
         </ul>
         
     </div>
     <div class="block w-50 me-3">
         <!-- PROFILE (MIDDLE-CONTAINER) -->
         <div class="profile-picture big-profile-picture clear">
-            <img width="158px" height="150px" alt="jeanbigpicture"
+            <img class="img1" width="158px" height="150px" alt="jeanbigpicture"
              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcGazpvDy-yzjHZFOXnL1UuXCa2upBJCo3hw&usqp=CAU.jpg">
+             </img>
         </div>
         
-        <h1 class="user-name text-center">Jean Forteroche</h1>  
+        <h1 class="user-name text-center">Jean Forteroche</h1><br>
+        
+        <h5>Jean Forteroche, né dans la région parisienne en 1956, a suivi des études de philosophie.<br> 
+        Il devient finalement instituteur, puis écrivain.<br> 
+        Marié, quatre enfants, il vit à Saint-Maur-des-Fossés dans le Val de Marne.<br>
+
+        <br>Ses premières publications sont des romans de science fiction pour la jeunesse.<br> 
+        Il est ensuite récompensé par le Prix Goya du premier roman pour Le Monde d'en haut.<br> 
+        Il écrit aussi pour des revues qui lui commandent des articles.<br></h5>
+        
     </div>
 
 <!-- RIGHT CONTAINER -->      
@@ -96,6 +120,7 @@
             // echo '<p>Mot de passe incorrect</p>';
         }
         ?>
+        
 
 
 
@@ -107,7 +132,7 @@
                         <i class="fas fa-lock"></i>
                     </div>-->
             
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center" >
                         <a class="sign-in btn btn-outline-success">S'identifié</a>
                     </div>
             
@@ -119,8 +144,16 @@
 
 <article>
 <div class="middle-container container d-flex">
-    <div class="block w-75 me-3">
-
+    <div class="block w-90 me-3">
+    <h3>Aperçu du livre</h3><br>
+        <h4>« L’aigle aveuglé referma lentement le bec, Galshan effleura son plumage.<br> 
+            — Voilà ton aigle, Galshan. C’est avec toi qu’il va voler maintenant... » 
+            Galshan passe l’hiver chez son grand-père qu’elle connaît à peine, 
+            car il vit seul au cœur des steppes de l'Alaska. 
+            En découvrant son fort caractère et les dures conditions de vie, 
+            Galshan s’inquiète des cent cinquante-trois jours à venir. 
+            Mais le dressage d’un aigle va leur permettre d’apprendre à se connaître... »
+    </h4>
         
 </div>
 </div>

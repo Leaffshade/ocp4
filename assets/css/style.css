@@ -38,7 +38,7 @@ body {
 }
 
 h1 {
-	font-size: 23px;
+	font-size: 40px;
 	color: #fff;
 }
 
@@ -51,7 +51,7 @@ nav ul
 nav li
 {
 	/*margin-right: 254px;*/
-	padding-left: 27px; /* Espace mots menu */
+	margin-right: 33px; /* Espace mots menu */
 }
 
 nav a{
@@ -61,7 +61,13 @@ nav a{
     line-height: 74px; /* centrage  texte menu haut/bas */
 	font-size: 17px;
 	padding-right: 5px;
+	float: left;
 	/* padding-left: 5px; */
+}
+
+nav.menu{
+	margin-bottom: 35px;
+	transition: background-color .5s ease-in;
 }
 
 
@@ -75,14 +81,15 @@ nav.menu a:hover {
 	font-size: 17px;
 	/*margin-bottom: 0px; marge bas hover barre bleue */
 	border-radius: 3px;
-	background-color: #9099b7;
 	margin-top: -10px;
 	padding-top: 10px;
-	margin-bottom: -15px;
-	padding-right: 10px;
+	margin-bottom: 0px;
+	margin-right: 33px;
+	padding-right: 5px;
 	padding-left: 10px;
-	margin-left: -10px; /* Pour que le hover ne soit pas en décalé */
-	-webkit-transition: all .3s linear;
+	margin-left: -35px; /* Pour que le hover ne soit pas en décalé */
+	background-color: #50597b;
+	color: white;
 }
 
 .fas, .fab{ /* logos menu fontawesome */
@@ -102,8 +109,43 @@ h2 {
 	font-size: 17px;
 }
 
-p {
+h3{
+	font-weight: bold;
+	font-size: 25px;
+	color: #11a8ab;
+	width: auto;
+	margin-left: 10px;
+}
+
+
+h4 {
 	font-size: 15px;
+	text-align: justify;
+	width: 94%;
+	margin-left: 10px;
+	color: white;
+}
+
+h5 {
+	color: white;
+	text-align: justify;
+	margin-left: 25px;
+	margin-right: 33px;
+}
+
+
+.img1{ /*photo */
+	border-radius: 5px 5px 5px 5px;
+	width: 100%;
+	margin-left: 1px;
+	box-shadow: 7px 4px 9px 7px black;
+	margin-top: 0px;
+}
+
+
+p{ /* Me du menu haut */
+	margin-bottom: -1px;
+	margin-left: 617px;
 }
 
 p a:hover{
@@ -178,6 +220,12 @@ h2, p, a, span{
 				
 	}
 
+
+
+/* .profil{
+	margin-left: 5px;
+} */
+
 .profile-picture {
 	border-radius: 100%;
 	overflow: hidden;
@@ -201,7 +249,7 @@ h2, p, a, span{
 		background: #394264;
 		border-radius: 5px;
 		padding-top: 10px;
-		padding-bottom: 64px;
+		/* padding-bottom: 64px; */
 	}
 
 /* MAIN CONTAINER */
@@ -214,7 +262,10 @@ h2, p, a, span{
 
 .container{ /* bloc articles */
 	margin-bottom: 15px;
+	
 }
+
+/* Menu côté */
 
 .block-title{
 	background: #11A8AB;
@@ -229,7 +280,7 @@ h2, p, a, span{
 	text-transform: uppercase;
 }
 
-.articles-list li {
+.articles-list li { 
 	border-bottom: 1px solid #1F253D;
 }
 
@@ -241,6 +292,20 @@ h2, p, a, span{
 	background-color: #50597b;
 	color: white;
 }
+
+textarea { /* Formulaire commentaire */
+	resize: none !important;
+	margin-left: 69px;
+	margin-top: 15px;
+	box-shadow: 4px 1px 10px 1px black;
+}
+
+.form-control{
+	margin-left: 69px;
+	margin-top: 15px;
+	box-shadow: 4px 1px 10px 1px black;
+}
+
 
 	
 

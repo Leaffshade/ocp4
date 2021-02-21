@@ -39,6 +39,10 @@
     </div>
     <div class="block w-50 me-3">
         <h1><?= $articleDetail['title'] ?></h1>
+       
+        <?php if(isset($articleDetail['picture']) && $articleDetail['picture'] !== "NULL") { ?>
+            <img src="<?= $articleDetail['picture'] ?>" width="100%" />
+        <?php } ?>
         <p><?= $articleDetail['content'] ?></p>
     </div>
 
@@ -115,8 +119,35 @@
 <article>
 <div class="middle-container container d-flex">
     <div class="block w-75 me-3">
+        <h2>Commentaires</h2>
 
-        
+        <form method="POST" action="?action=add_comment&article_id=<?= $articleDetail['id']?>">
+            <div>
+                <label class="d-block text-white">Commentaire</label>
+                <textarea class="w-75 form-control" name="description" rows="5"></textarea>
+            </div>
+            <div>
+                <label class="d-block text-white">Auteur</label>
+                <input name="author" class="w-75 form-control"/>
+            </div>
+            <button class="btn btn-primary mt-2" type="submit">Envoyer</button>
+        </form>
+
+        <?php 
+            if(count($comments) == 0) { ?>
+                <p>Aucun commentaire</p>
+            <?php }
+    
+            foreach($comments as $comment){ ?>
+                <p><?php echo $comment['description']; ?> <br/> by <?= $comment['author'] ?></p>
+            
+                <?php if($comment['notified'] == 0) { ?>
+                    <a href="?action=notify_comment&comment_id=<?php echo $comment['id']; ?>&article_id=<?php echo $articleDetail['id'] ?>" class="btn btn-danger">Signaler</a>
+                <?php } else { ?>
+                    <span>Déjà signalé</span>
+                <?php } ?>
+            <?php } ?>
+    
 </div>
 </div>
 </article>
