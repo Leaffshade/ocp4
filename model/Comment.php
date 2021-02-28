@@ -50,6 +50,13 @@ class Comment extends Db {
         $query->execute([$id]);
     }
 
+    public function getNotifiedComments(){
+        //Requetes SQL SELECT dans la table article pour récupérer tous les commentaires (page index)
+        $query = $this->db->prepare('SELECT * FROM comment WHERE notified = 1');
+        $query->execute();
+        return $query->fetchAll(); /* Affiche toutes les entrées */
+    }
+
  
 // On affiche chaque entrée une à une
 /*while ($donnees = $reponse->fetch())

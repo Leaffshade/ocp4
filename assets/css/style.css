@@ -38,8 +38,11 @@ body {
 }
 
 h1 {
+	font-family: Time New Roman;
 	font-size: 40px;
 	color: #fff;
+	display: flex;
+	justify-content: center;
 }
 
 nav ul
@@ -52,6 +55,7 @@ nav li
 {
 	/*margin-right: 254px;*/
 	margin-right: 33px; /* Espace mots menu */
+	margin-left: 152px;
 }
 
 nav a{
@@ -66,9 +70,17 @@ nav a{
 }
 
 nav.menu{
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 	transition: background-color .5s ease-in;
 }
+
+/* .align-items-center{
+	align-items: center !important;
+	margin-left: 130px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 0px;
+} */
 
 
 nav.menu a:hover {
@@ -76,18 +88,19 @@ nav.menu a:hover {
 	/* Couleur Menu avec clic */
 	color: #171b2d;
 	/* Couleur ligne du menu */
-	border-bottom: 8px solid #171b2d;
+	border-bottom: 5px solid #171b2d;
 	/* bordure bas et couleur petite barre bleue liens du menu */
 	font-size: 17px;
 	/*margin-bottom: 0px; marge bas hover barre bleue */
 	border-radius: 3px;
-	margin-top: -10px;
-	padding-top: 10px;
-	margin-bottom: 0px;
-	margin-right: 33px;
-	padding-right: 5px;
-	padding-left: 10px;
-	margin-left: -35px; /* Pour que le hover ne soit pas en décalé */
+	margin-top: -9px;
+	/* padding-bottom: 1px; */
+	padding-top: 6px;
+	margin-bottom: -1px;
+	/* margin-right: 30px; */
+	/* padding-right: 20px;
+	padding-left: 20px; */
+	/* margin-left: -30px; Pour que le hover ne soit pas en décalé */
 	background-color: #50597b;
 	color: white;
 }
@@ -133,25 +146,14 @@ h5 {
 	margin-right: 33px;
 }
 
-
-.img1{ /*photo */
+img { /*photo */
 	border-radius: 5px 5px 5px 5px;
 	width: 100%;
-	margin-left: 1px;
+	margin-left: 0px;
 	box-shadow: 7px 4px 9px 7px black;
 	margin-top: 0px;
+	margin-bottom: 50px;
 }
-
-
-p{ /* Me du menu haut */
-	margin-bottom: -1px;
-	margin-left: 617px;
-}
-
-p a:hover{
-	color: #171b2d;
-}
-
 
 h2, p, a, span{
 	color: #fff;
@@ -159,14 +161,12 @@ h2, p, a, span{
 }
 	.scnd-font-color {
 		color: #9099b7;
-		margin-left: 5px;
-		
+		margin-left: 5px;	
 	}
 
 	ul{
 		list-style-type: none; /* retire la puce du menu */
 	}
-
 
 .left-container{
 	background: #394264;
@@ -174,8 +174,6 @@ h2, p, a, span{
 	padding-top: 10px;
 	padding-bottom: 7px;
 }
-
-
 
 .formulaire { /* Affichage logos formulaire*/
 	position: relative;

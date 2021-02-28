@@ -22,6 +22,23 @@
 
     <div class="block w-100">
             <h1>Gestion des commentaires</h1>
+            
+            <table class='table table-bordered  table-dark w-50 mx-auto'>
+            <tbody>
+                <?php foreach($comments as $comment){ ?>
+                    <tr>
+                        <td> <?php echo $comment['description'] ?></td>
+                       <td>
+                        <button class="btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                       </td>
+                    </tr>
+                <?php } ?>
+            <tbody>
+
+         </table>
+
         <!-- 
             1. Lister tous les commentaires notifiés
             2. Sur chaque article, ajouter la possibilité de supprimer et reverser le commentaire

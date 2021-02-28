@@ -14,7 +14,7 @@ if(!isset( $_GET['action'])){
     // Afficher la page de listing des articles
     articles();
 }  else if($_GET['action'] == 'article'){
-    // Afficher la page de détail d'un article en appelant la fonction article du contoleur
+    // Afficher la page de détail d'un article en appelant la fonction article du controleur
     article($_GET['article_id']);
 } else if($_GET['action'] == 'add_comment') {
     addComment($_GET['article_id']);
@@ -26,4 +26,7 @@ if(!isset( $_GET['action'])){
     adminArticles();
 } else if ($_GET['action'] == 'admin_comments'){
     adminComments();
+}
+ else if ($_GET['action'] == 'edit_article'){
+     editArticle($_GET['article_id']);
 }

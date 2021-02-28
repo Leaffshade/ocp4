@@ -21,31 +21,20 @@
 <div class="middle-container container">
 
     <div class="block w-100">
-        <h1>Gestion des articles</h1>
-        <!-- 
-            1. Lister tous les articles
-            2. Sur chaque article, ajouter la possibilité de supprimer et modifier l'article
-            3. Ajouter la possibilité d'ajouter un nouvel article
-         -->
-         <table class='table table-bordered  table-dark w-50 mx-auto'>
-            <tbody>
-                <?php foreach($articles as $article){ ?>
-                    <tr>
-                        <td> <?php echo $article['title'] ?></td>
-                       <td>
-                        <button class="btn">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                        <a href="?action=edit_article&article_id=<?php echo $article['id']; ?>" class="btn">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                       </td>
-                    </tr>
-                <?php } ?>
-            <tbody>
-
-         </table>
-         
+      <form>
+        <div>
+            <label>Titre</label>
+            <input type="text" value="<?php echo $article['title'] ?>" class="form-control">
+        </div>
+        <div>
+            <label>Article</label>
+            <textarea rows="10" class="form-control">
+                <?php echo $article['content'] ?>
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+        
         
         
     </div>
