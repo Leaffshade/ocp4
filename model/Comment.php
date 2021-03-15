@@ -40,9 +40,11 @@ class Comment extends Db {
        
     }
 
-    public function deleteComment($id, $data){
+    public function deleteComment($id){
+        
         //Requetes SQL DELETE dans la table Comment pour supprimer un commentaire (admin)
-       
+        $query = $this->db->prepare('DELETE FROM comment WHERE id = ?');
+        $query->execute([$id]);
     }
 
     public function notifyComment($id){
@@ -58,6 +60,14 @@ class Comment extends Db {
     }
 
  
+    public function notnotifyComment(){
+        //Requetes SQL SELECT dans la table article pour récupérer tous les commentaires (page index)
+        $query = $this->db->prepare('SELECT * FROM comment WHERE notified = 1');
+        $query->execute();
+        return $query->fetchAll(); /* Affiche toutes les entrées */
+    }
+
+
 // On affiche chaque entrée une à une
 /*while ($donnees = $reponse->fetch())
 {

@@ -29,9 +29,12 @@
                     <tr>
                         <td> <?php echo $comment['description'] ?></td>
                        <td>
-                        <button class="btn">
+                       <a href="?action=notnotify_comment&comment_id=<?php echo $comment['id']; ?>" class="btn">
+                            <i class="fas fa-check"></i>
+                        </a>
+                        <a href="?action=delete_comment&comment_id=<?php echo $comment['id']; ?>" class="btn">
                             <i class="fas fa-trash"></i>
-                        </button>
+                        </a>
                        </td>
                     </tr>
                 <?php } ?>

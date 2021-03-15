@@ -33,12 +33,14 @@
                     <tr>
                         <td> <?php echo $article['title'] ?></td>
                        <td>
-                        <button class="btn">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                        <a href="?action=edit_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                       <a href="?action=edit_article&article_id=<?php echo $article['id']; ?>" class="btn">
                             <i class="fas fa-edit"></i>
                         </a>
+                       
+                        <a href="?action=delete_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        
                        </td>
                     </tr>
                 <?php } ?>

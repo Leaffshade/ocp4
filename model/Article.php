@@ -32,12 +32,11 @@ class Article extends Db {
        
     }
 
-    public function deleteeArticle($id, $data){
+    public function deleteArticle($id){
         //Requetes SQL DELETE dans la table article pour supprimer un article (admin)
-       
+        $query = $this->db->prepare('DELETE FROM article WHERE id = ?');
+        $query->execute([$id]);   
     }
-
-
 
 
 }

@@ -6,7 +6,7 @@
             <li><a href="Accueil" class="d-flex align-items-center"><i class="fas fa-home"></i>Accueil</a></li>
             <li><a href="Articles" class="d-flex align-items-center"><i class="fab fa-readme"></i>Auteur</a></li>
             <li><a href="?action=admin_home" class="d-flex align-items-center"><i class="fas fa-cog"></i>Admin</a></li>
-            <li><a href="Articles" class="d-flex align-items-center"><i class="far fa-user"></i>Connexion</a></li> 
+            <li><a href="Articles" class="d-flex align-items-center"><i class="far fa-user mr-2"></i>Connexion</a></li> 
         </ul>
     </nav>
 </header>
