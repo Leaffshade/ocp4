@@ -1,6 +1,7 @@
 <?php
 
 require_once('./model/User.php');
+
 require_once('./model/Article.php');
 require_once('./model/Comment.php');
 

@@ -7,7 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
+    
     <link rel="stylesheet" href="assets/css/style.css" />
+     <!-- Importation de la librairie TinyMCE (editeur de texte riche) -->
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Permettre de transformer les balises html <textearea> en éditeur de texte riche -->
+    <script>tinymce.init({
+        selector:'textarea', 
+        plugins: "textcolor",
+        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor"
+        });</script>
+
 </head>
     <body>
 
@@ -21,32 +31,24 @@
 <div class="middle-container container">
 
     <div class="block w-100">
-      <form>
+      <form method="POST" action="?action=edit_article_action&article_id=<?php echo $article['id']; ?>">
         <div>
             <label>Titre</label>
-            <input type="text" value="<?php echo $article['title'] ?>" class="form-control">
+            <input type="text" name="title" value="<?php echo $article['title'] ?>" class="form-control">
         </div>
         <div>
             <label>Article</label>
-            <textarea rows="10" class="form-control">
+            <textarea rows="10" class="form-control" name="description">
                 <?php echo $article['content'] ?>
             </textarea>
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
-        
-        
-        
-    </div>
+</div>
+</div>
 
 <!-- RIGHT CONTAINER -->      
-
-
-    </section>
-       
-</body>
-<script src="js.js"></script>
-
+  
 <!-- Listing des 5 derniers tweets -->
 
     <!-- <ul>

@@ -260,6 +260,12 @@ textarea { /* Formulaire commentaire */
 	box-shadow: 4px 1px 10px 1px black;
 }
 
+.Block_gestion_article{
+		padding-bottom: 50px;
+}
 
-	
+/* .fas fa-trash a:hover{
+	color: red;
+} */
+
 

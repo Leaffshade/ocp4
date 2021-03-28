@@ -50,3 +50,17 @@ function notnotifyComment($commentId){
     header('Location: ?action=admin_comments');
     // require_once('./view/admin/admin-comments.php');
 }
+
+// function editArticleAction() {
+//     $articleModel = new Article();
+//     $data = $_POST;
+//     $articleModel->updateArticle($_GET['article_id'], $data);
+//     header('Location: ?action=admin_articles');
+// }
+
+function editArticleAction() {
+    $articleModel = new Article();
+    $data = $_POST;
+    $articleModel->addArticle($_GET['article_id'], $data);
+    header('Location: ?action=admin_articles');
+}

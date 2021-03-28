@@ -19,8 +19,9 @@
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container">
-
+    
     <div class="block w-100">
+    <div class="Block_gestion_article">
         <h1>Gestion des articles</h1>
         <!-- 
             1. Lister tous les articles
@@ -40,15 +41,20 @@
                         <a href="?action=delete_article&article_id=<?php echo $article['id']; ?>" class="btn">
                             <i class="fas fa-trash"></i>
                         </a>
-                        
                        </td>
+
+                       <!-- <a href="?action=add_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                            <i class="fal fa-plus-circle"></i> -->
                     </tr>
+                   
                 <?php } ?>
+
+                
             <tbody>
 
          </table>
          
-        
+                </div>   
         
     </div>
 

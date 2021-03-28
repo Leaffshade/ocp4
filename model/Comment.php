@@ -60,33 +60,14 @@ class Comment extends Db {
     }
 
  
-    public function notnotifyComment(){
+    public function notnotifyComment($id){
         //Requetes SQL SELECT dans la table article pour récupérer tous les commentaires (page index)
-        $query = $this->db->prepare('SELECT * FROM comment WHERE notified = 1');
-        $query->execute();
-        return $query->fetchAll(); /* Affiche toutes les entrées */
+        $query = $this->db->prepare('UPDATE comment SET notified = 0 WHERE id = ?');
+        $query->execute([$id]);
     }
 
 
-// On affiche chaque entrée une à une
-/*while ($donnees = $reponse->fetch())
-{
-?>
-    <p>
-    <strong>Episode</strong> : <?php echo $donnees['title']; ?><br />
-    
-    <?php echo $donnees['user']; ?> a commenté <?php echo $donnees['title']; ?> : 
-    <em><?php echo $donnees['commentaires']; ?></em>
-   </p>
-<?php*/
-}
 
-
-
-
-
-// $reponse->closeCursor(); // Termine le traitement de la requête
-// ?>
 
 
 

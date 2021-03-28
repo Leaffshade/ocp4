@@ -6,11 +6,9 @@ class Db {
     protected $db;
 
     public function __construct(){
-        try {
+        
             $this->db = new PDO('mysql:dbname=blog;host=127.0.0.1', 'root', '');
-        } catch(Exception $e){
-            var_dump(e);
-        }
+       
         
     }
 }

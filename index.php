@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="assets/css/style.css" />
 
 <?php
 
@@ -7,10 +6,12 @@
 require_once('./controller/FrontendController.php');
 require_once('./controller/AdminController.php');
 
+
 if(!isset( $_GET['action'])){
     //Afficher la page d'accueil en appelant la fonction home du controler
     home();
-} else if($_GET['action'] == 'articles'){
+} 
+else if($_GET['action'] == 'articles'){
     // Afficher la page de listing des articles
     articles();
 
@@ -46,6 +47,10 @@ else if ($_GET['action'] == 'admin_comments'){
      editArticle($_GET['article_id']);
 }
 
+else if ($_GET['action'] == 'edit_article_action') {
+    editArticleAction();
+}
+
 else if ($_GET['action'] == 'delete_comment'){
     deleteComment($_GET['comment_id']);
 }
@@ -57,3 +62,8 @@ else if ($_GET['action'] == 'delete_article'){
 else if ($_GET['action'] == 'notnotify_comment'){
     notnotifyComment($_GET['comment_id']);
 }
+
+else if($_GET['action'] == 'add_article') {
+    addArticle($_GET['article_id']);
+
+} 
