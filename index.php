@@ -2,9 +2,10 @@
 <?php
 
 // Routeur: Décider en fonction de l'URL, la fonction du controleur à appeler
-
 require_once('./controller/FrontendController.php');
 require_once('./controller/AdminController.php');
+
+session_start();
 
 
 if(!isset( $_GET['action'])){
@@ -64,6 +65,46 @@ else if ($_GET['action'] == 'notnotify_comment'){
 }
 
 else if($_GET['action'] == 'add_article') {
-    addArticle($_GET['article_id']);
-
+    addArticle();
 } 
+else if($_GET['action'] == 'add_article_action') {
+    addArticleAction();
+}
+
+else if($_GET['action'] == 'image') {
+    //Todo: A ajuster en fonction de l'hébergeur
+    showImage();
+} 
+else if($_GET['action'] == 'login') {
+    login();
+}
+else if($_GET['action'] == 'logout'){
+    logout();
+}
+
+// ---------------------------------------
+
+
+/*if (!$resultat)
+{
+    echo 'Identifiant ou mot de passe incorrecte';
+}
+else
+{
+    if ($isPasswordCorrect) {
+        session_start();
+        $_SESSION['id'] = $resultat['id'];
+        $_SESSION['pseudo'] = $pseudo;
+        echo 'Vous êtes connecté';
+    }
+    else {
+        echo 'Identifiant ou mot de passe incorrecte';
+    }
+
+    // Indique que le membre est connecté grâce à la variable $_SESSION
+    if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+    {
+        echo 'Bienvenue ' . $_SESSION['pseudo'];
+    }
+
+}*/

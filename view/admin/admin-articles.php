@@ -15,54 +15,49 @@
 <div class="main-container">
 
 <?php include_once(__DIR__ . '/../header.php'); ?>
-     
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container">
     
     <div class="block w-100">
-    <div class="Block_gestion_article">
-        <h1>Gestion des articles</h1>
-        <!-- 
-            1. Lister tous les articles
-            2. Sur chaque article, ajouter la possibilité de supprimer et modifier l'article
-            3. Ajouter la possibilité d'ajouter un nouvel article
-         -->
-         <table class='table table-bordered  table-dark w-50 mx-auto'>
+        <div class="Block_gestion_article">
+            <h1>Gestion des articles</h1>
+            <!-- 
+                1. Lister tous les articles
+                2. Sur chaque article, ajouter la possibilité de supprimer et modifier l'article
+                3. Ajouter la possibilité d'ajouter un nouvel article
+            -->
+        <table class='table table-bordered  table-dark w-50 mx-auto'>
             <tbody>
                 <?php foreach($articles as $article){ ?>
                     <tr>
                         <td> <?php echo $article['title'] ?></td>
-                       <td>
-                       <a href="?action=edit_article&article_id=<?php echo $article['id']; ?>" class="btn">
-                            <i class="fas fa-edit"></i>
-                        </a>
+                        <td>
+                            <a href="?action=edit_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
                        
-                        <a href="?action=delete_article&article_id=<?php echo $article['id']; ?>" class="btn">
-                            <i class="fas fa-trash"></i>
-                        </a>
+                            <a href="?action=delete_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                                <i class="fas fa-trash"></i>
+                            </a>
                        </td>
-
                        <!-- <a href="?action=add_article&article_id=<?php echo $article['id']; ?>" class="btn">
                             <i class="fal fa-plus-circle"></i> -->
-                    </tr>
-                   
-                <?php } ?>
-
-                
+                    </tr>   
+                <?php } ?>             
             <tbody>
 
-         </table>
-         
-                </div>   
-        
-    </div>
+        </table>
+        <div class="d-flex justify-content-center">
+            <a href="?action=add_article" class='btn text-white'>
+                <i class="fas fa-plus-circle"></i> Ajouter un nouvel article
+            </a>
+        </div>    
+    </div>   
+</div>
 
 <!-- RIGHT CONTAINER -->      
-
-
-    </section>
-       
+    </section>    
 </body>
 <script src="js.js"></script>
 

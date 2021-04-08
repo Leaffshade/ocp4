@@ -44,3 +44,14 @@ function notifyComment($commentId, $articleId){
     //Redirection vers la page de l'article concerné
     header('location: ?action=article&article_id=' . $articleId);
 }
+
+function showImage(){
+    $image  = __DIR__ . '/../assets/images/uploads/' . $_GET['imageName'];
+   // var_dump();
+    //$image  = __DIR__ . '/../assets/images/jeansmallpicture.jpg';
+    header('Content-Type: ' . mime_content_type ($image));
+    //header('Content-Disposition: attachment; filename="' .$_GET['imageName'] . '"');
+    header('Content-Length: ' . filesize($image));
+    readfile($image);
+    
+}

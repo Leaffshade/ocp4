@@ -4,10 +4,17 @@ require_once('Db.php');
 
 class User extends Db {
 
-    public function addUser(){
+    public function addUser($login, $password){
         //Requetes SQL INSERT
-        //$query = $this->db->prepare('INSERT INTO user(name, login, password) VALUES ("Laura", "laura", "laura")');
-        //$query->execute();
+        $query = $this->db->prepare('INSERT INTO user(login, password) VALUES (?, ?)');
+        return $query->execute([$login, password_hash($password, PASSWORD_DEFAULT )]);
+    }
+
+    public function login($login){
+        //Requetes SQL INSERT
+        $query = $this->db->prepare('SELECT * FROM user WHERE login = ?');
+        $query->execute([$login]);
+        return $query->fetch();
     }
 
     public function getUsers(){
@@ -15,6 +22,8 @@ class User extends Db {
         $query = $this->db->prepare('SELECT * FROM user');
         $query->execute();
     }
+
+    // ----------------------------------------
 
 
 

@@ -6,10 +6,10 @@ class Article extends Db {
 
     // Methodes CRUD : Create - Read -  Update - Delete
 
-    public function addArticle($description, $author, $articleId){
+    public function addArticle($data, $imageName){
         //Requetes SQL INSERT dans la table comment (fonctionnalité admin d'ajout d'un nouvel article)
-        $query = $this->db->prepare('INSERT INTO comment(description, date, author, article_id, notified) VALUES(?, NOW(), ?, ?, 0)');
-        $res = $query->execute([$description, $author, $articleId]);
+        $query = $this->db->prepare('INSERT INTO article(title, content, picture, published_date, user_id) VALUES(?, ?, ?, NOW(), 1)');
+        $res = $query->execute([$data['title'], $data['description'], $imageName]);
         return $res;
     }
 

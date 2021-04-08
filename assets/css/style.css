@@ -140,7 +140,7 @@ h2, p, a, span{
 .formulaire { /* Affichage logos formulaire*/
 	position: relative;
 }
-	input[type="text"]{ /* Encadrés texte formulaire */
+	input[type="text"], input[type="password"]{ /* Encadrés texte formulaire */
 		width: auto !important;
 		height: 50px;
 		/*margin-bottom: 20px;*/
@@ -166,7 +166,6 @@ h2, p, a, span{
 	color: white;
 	border-color: #1f253d;
 	background-color: #1f253d;
-	/* margin-bottom: 15px; */
 	box-shadow: black 1px 1px 3px 1px;
 	-webkit-transition: all .3s linear;
 }
@@ -176,9 +175,12 @@ h2, p, a, span{
 		background-color: white;
 		opacity: 0.70;
 		border: black;
-		margin-bottom: 17px;
-				
 	}
+
+.mp_oublie a:hover{
+	color: #44cde2;
+}
+
 
 .profile-picture {
 	border-radius: 100%;
@@ -186,6 +188,7 @@ h2, p, a, span{
 	-webkit-box-sizing: content-box;
   	-moz-box-sizing: content-box;
 	  box-sizing: content-box;	
+	  box-shadow: 4px 1px 10px 1px black;
 }
 	.big-profile-picture {
 		margin: 0 auto;		
@@ -204,6 +207,7 @@ h2, p, a, span{
 		border-radius: 5px;
 		padding-top: 10px;
 		/* padding-bottom: 64px; */
+		box-shadow: 4px 1px 10px 1px black;
 	}
 
 /* MAIN CONTAINER */
@@ -219,7 +223,7 @@ h2, p, a, span{
 	
 }
 
-/* Menu côté */
+/* Menu gauche */
 
 .block-title{
 	background: #11A8AB;
@@ -264,6 +268,10 @@ textarea { /* Formulaire commentaire */
 		padding-bottom: 50px;
 }
 
+
+.Block_gestion_article :hover{
+	color: #44cde2;
+}
 /* .fas fa-trash a:hover{
 	color: red;
 } */

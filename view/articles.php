@@ -9,13 +9,13 @@
 <body>
     <!-- Menu -->
     <!-- Listing de tous les articles -->
-<ul>
+<!-- <ul>
         <li>
             <a href=?>Accueil</a>
             <a href="?action=articles">Listing</a>
             <a href="?action=article">Détail</a>
         </li>
-    </ul>
+    </ul> -->
     <h1>Listing des articles</h1>
 
 
@@ -79,7 +79,6 @@
                 <div class="account block">
                     <h2 class="titular">CONNEXION A VOTRE COMPTE</h2>
 
-
                     <h1><?= $article['title'] ?></h1>
     <img src="<?= $article['picture'] ?>" width="200"/>
 
@@ -90,7 +89,6 @@
                     </div>
                 
                     <input type="text" placeholder="votrenom@gmail.com" class="email text-input">
-                
                 </div>  
                 <!--<div class="logoform">
                     <i class="fas fa-envelope-open-text"></i>
@@ -118,11 +116,6 @@
         // echo '<p>Mot de passe incorrect</p>';
     }
     ?>
-
-
-
-
-
 
                 </div>    
                <!-- <div class="logoform">

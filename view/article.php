@@ -13,9 +13,7 @@
 
 <!-- BLOG -->
 <div class="main-container">
-
  <?php include_once('header.php'); ?>
-
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container d-flex flex-wrap flex-md-nowrap">
@@ -41,15 +39,14 @@
         <h1><?= $articleDetail['title'] ?></h1>
        
         <?php if(isset($articleDetail['picture']) && $articleDetail['picture'] !== "NULL") { ?>
-            <img src="<?= $articleDetail['picture'] ?>" width="100%" />
+            <!--<img src="<?= $articleDetail['picture'] ?>" width="100%" />-->
+            <img src="./assets/images/uploads/<?= $articleDetail['picture'] ?>"/>
         <?php } ?>
         <p><?= $articleDetail['content'] ?></p>
     </div>
   
-
 <!-- RIGHT CONTAINER -->      
-<!-- Connexion Compte -->
-     
+<!-- Connexion Compte -->   
     <div class="right-container">
         <section>  
             <aside> 
@@ -69,17 +66,11 @@
                         <i class="fas fa-envelope-open-text"></i>
                     </div>-->
                 
-
                     <div class="formulaire d-flex pe-2 mb-2">
                         <div class="px-2 d-flex align-items-center">
                             <i class="fas fa-lock"></i>
                         </div>
                         <input type="text" placeholder="Mot de passe" class="password text-input">
-
-
-
-
-
 
                         <?php
         if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "kangourou") // Si le mot de passe est bon
@@ -96,39 +87,23 @@
             // echo '<p>Mot de passe incorrect</p>';
         }
         ?>
-
-
-                    </div>    
+    </div>    
                 <!-- <div class="logoform">
                         <i class="fas fa-lock"></i>
                     </div>-->
             
-                    <div class="d-flex justify-content-center">
-                        <a class="sign-in btn btn-outline-success">S'identifié</a>
-                    </div>
+    <div class="d-flex justify-content-center">
+        <a class="sign-in btn btn-outline-success">S'identifié</a>
+    </div>
             
-                    <p class="scnd-font-color text-center"><a href="?">Mot de passe oublié ?</a></p>
+        <p class="scnd-font-color text-center"><a href="?">Mot de passe oublié ?</a></p>
                 </form>
             </aside>
-                    </div> 
-    </div>
-
-
-    </section>
-       
-</body>
+</div> 
+</div>
+    </section>      
+<!-- </body> -->
 <script src="js.js"></script>
-
-<!-- Listing des 5 derniers tweets -->
-
-    <!-- <ul>
-        <li>
-            <a href="?">Accueil</a>
-            <a href="?action=tweets">Listing</a>
-            <a href="?action=article">Détail</a>
-        </li>
-    </ul>
-    <h1>Accueil</h1> -->
 
     <footer>
     <!-- Placez ici le contenu du pied de page -->

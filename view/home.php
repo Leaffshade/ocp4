@@ -13,9 +13,7 @@
 
 <!-- BLOG -->
 <div class="main-container">
-
-<?php include_once('header.php'); ?>
-     
+<?php include_once('header.php'); ?>    
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container d-flex flex-wrap flex-md-nowrap">
@@ -33,30 +31,28 @@
                             <?= $article['title'] ?>
                         </a>
                     </li>
-
-            <?php } ?>
-            
+            <?php } ?>      
         </ul>
-        
     </div>
+
     <div class="block w-50 me-3">
         <!-- PROFILE (MIDDLE-CONTAINER) -->
         <div class="profile-picture big-profile-picture clear">
             <img class="img1" width="158px" height="150px" alt="jeanbigpicture"
              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcGazpvDy-yzjHZFOXnL1UuXCa2upBJCo3hw&usqp=CAU.jpg">
-             </img>
+            </img>
         </div>
         
         <h1 class="user-name text-center">Jean Forteroche</h1><br>
         
         <h5>Jean Forteroche, né dans la région parisienne en 1956, a suivi des études de philosophie.<br> 
-        Il devient finalement instituteur, puis écrivain.<br> 
-        Marié, quatre enfants, il vit à Saint-Maur-des-Fossés dans le Val de Marne.<br>
+            Il devient finalement instituteur, puis écrivain.<br> 
+            Marié, quatre enfants, il vit à Saint-Maur-des-Fossés dans le Val de Marne.<br>
 
-        <br>Ses premières publications sont des romans de science fiction pour la jeunesse.<br> 
-        Il est ensuite récompensé par le Prix Goya du premier roman pour Le Monde d'en haut.<br> 
-        Il écrit aussi pour des revues qui lui commandent des articles.<br></h5>
-        
+            <br>Ses premières publications sont des romans de science fiction pour la jeunesse.<br> 
+            Il est ensuite récompensé par le Prix Goya du premier roman pour Le Monde d'en haut.<br> 
+            Il écrit aussi pour des revues qui lui commandent des articles.<br>
+        </h5>
     </div>
 
 <!-- RIGHT CONTAINER -->      
@@ -65,106 +61,80 @@
     <div class="right-container">
         <section>  
             <aside> 
-                <form action="Page1.php" method="POST">
+                <form action="?action=login" method="POST">
                     <div class="account block">
                         <h2 class="titular">CONNEXION A VOTRE COMPTE</h2>
 
-                    <div class="formulaire d-flex mb-2 pe-2">
-                        <div class="px-2 d-flex align-items-center">
-                            <i class="fas fa-envelope-open-text"></i>
+                        <div class="formulaire d-flex mb-2 pe-2">
+                            <div class="px-2 d-flex align-items-center">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                                <input type="text" placeholder="Laura" class="email text-input" name="login">
                         </div>
-                    
-                        <input type="text" placeholder="votrenom@gmail.com" class="email text-input">
-                    
-                    </div>  
-                    <!--<div class="logoform">
-                        <i class="fas fa-envelope-open-text"></i>
-                    </div>-->
-                
 
-                    <div class="formulaire d-flex pe-2 mb-2">
-                        <div class="px-2 d-flex align-items-center">
-                            <i class="fas fa-lock"></i>
+                        <div class="formulaire d-flex pe-2 mb-2">
+                            <div class="px-2 d-flex align-items-center">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                                <input type="password" placeholder="Mot de passe" class="password text-input" name="password">
+                        </div>  
+
+                        <div>
+                            <?php if(isset($_GET['login_error'])) { ?>
+                                <p><?php echo $_GET['login_error']; ?></p>
+                            <?php } ?>
                         </div>
-                        <input type="text" placeholder="Mot de passe" class="password text-input">
-
-
-
-
-
-
-                        <?php
-        if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "kangourou") // Si le mot de passe est bon
-        {
-        // On affiche les codes
-        ?>
-            <h1>Voici les codes d'accès :</h1>
-            <p><strong>CRD5-GTFT-CK65-JOPM-V29N-24G1-HH28-LLFV</strong></p> 
-
-            <?php
-        }
-        else // Sinon, on affiche un message d'erreur
-        {
-            // echo '<p>Mot de passe incorrect</p>';
-        }
-        ?>
-        
-
-
-
-
-
-
-                    </div>    
-                <!-- <div class="logoform">
-                        <i class="fas fa-lock"></i>
-                    </div>-->
             
                     <div class="d-flex justify-content-center" >
-                        <a class="sign-in btn btn-outline-success">S'identifié</a>
+                        <button type="submit" class="sign-in btn btn-outline-success">S'identifié</a>
                     </div>
-            
+            <div class="mp_oublie">
                     <p class="scnd-font-color text-center"><a href="?">Mot de passe oublié ?</a></p>
                 </form>
             </aside>
-                    </div> 
+            </div> 
     </div>
 
+
+<!-- -----------------------------------------  -->
+
+<!-- Création d'un cookie avec mode httpOnly, ce qui le rendra inaccessible en JS, réduit la faille XSS -->
+<!-- Format 'nom cookie', 'valeur du coookie', 'date d'expiration' sous forme de timestamp 
+- Ici 365 pour 1 an * nombre secondes dans 1 année -->
+<?php setcookie('pseudo', 'password', time() + 365*24*3600, null, null, false, true); ?>
+
+<p>
+    <?php echo $_COOKIE['pseudo']; ?>
+    <?php echo $_COOKIE['password']; ?> Confirmer ?
+</p>
+
+<!-- Modifier un cookie existant  -->
+<?php setcookie('pseudo', 'password', time() + 365*24*3600, null, null, false, true); ?>
+
+<!-- --------------------------------------  -->
+
+
 <article>
-<div class="middle-container container d-flex">
-    <div class="block w-90 me-3">
-    <h3>Aperçu du livre</h3><br>
-        <h4>« L’aigle aveuglé referma lentement le bec, Galshan effleura son plumage.<br> 
-            — Voilà ton aigle, Galshan. C’est avec toi qu’il va voler maintenant... » 
-            Galshan passe l’hiver chez son grand-père qu’elle connaît à peine, 
-            car il vit seul au cœur des steppes de l'Alaska. 
-            En découvrant son fort caractère et les dures conditions de vie, 
-            Galshan s’inquiète des cent cinquante-trois jours à venir. 
-            Mais le dressage d’un aigle va leur permettre d’apprendre à se connaître... »
-    </h4>
-        
-</div>
-</div>
+    <div class="middle-container container d-flex">
+        <div class="block w-90 me-3">
+            <h3>Aperçu du livre</h3><br>
+                <h4>« L’aigle aveuglé referma lentement le bec, Galshan effleura son plumage.<br> 
+                    — Voilà ton aigle, Galshan. C’est avec toi qu’il va voler maintenant... » 
+                    Galshan passe l’hiver chez son grand-père qu’elle connaît à peine, 
+                    car il vit seul au cœur des steppes de l'Alaska. 
+                    En découvrant son fort caractère et les dures conditions de vie, 
+                    Galshan s’inquiète des cent cinquante-trois jours à venir. 
+                    Mais le dressage d’un aigle va leur permettre d’apprendre à se connaître... »
+                </h4>
+        </div>
+    </div>
 </article>
-    </section>
+        </section>
        
 </body>
-<script src="js.js"></script>
-
-<!-- Listing des 5 derniers tweets -->
-
-    <!-- <ul>
-        <li>
-            <a href="?">Accueil</a>
-            <a href="?action=tweets">Listing</a>
-            <a href="?action=article">Détail</a>
-        </li>
-    </ul>
-    <h1>Accueil</h1> -->
-
-    <footer>
-    <!-- Placez ici le contenu du pied de page -->
-    </footer>
-
-    </body>
+    <script src="js.js"></script>
+        <footer>
+            <!-- Placez ici le contenu du pied de page -->
+        </footer>
+</body>
 </html>
