@@ -44,6 +44,8 @@ function deleteComment($commentId){
 
 function deleteArticle($articleId){
     $articleModel = new Article(); // Je crée un objet de type article qui fait référence à mon modèle d'article permettant d'interagir avec la BD
+    $article = $articleModel->getArticle($articleId);
+    deleteImage($article);
     $article = $articleModel->deleteArticle($articleId);
     header('Location: ?action=admin_articles');
     // require_once('./view/admin/admin-article.php');
@@ -59,7 +61,11 @@ function notnotifyComment($commentId){
 function editArticleAction() {
     $articleModel = new Article();
     $data = $_POST;
-    $articleModel->updateArticle($_GET['article_id'], $data);
+    $image = $_FILES['image']; //On récupère le fichier image uploadé
+    $article = $articleModel->getArticle($_GET['article_id']);
+    deleteImage($article);
+    $imageName = addImage($image);
+    $articleModel->updateArticle($_GET['article_id'], $data, $imageName);
     header('Location: ?action=admin_articles');
 }
 
@@ -71,13 +77,12 @@ function addArticle(){
 
 // Fonction qui permet de valider l'ajout d'un article
 function addArticleAction(){
-    $data = $_POST;
-    $image = $_FILES['image'];
-    $dest = __DIR__ . '/../assets/images/uploads/' . $image['name'];
-    move_uploaded_file($image['tmp_name'], $dest);
+    $data = $_POST; //On récupère les informations du formulaire que l'on stock dans une variable $data
+    $image = $_FILES['image']; //On récupère le fichier image uploadé
+    $imageName = addImage($image);
     $articleModel = new Article();
-    $articleModel->addArticle($data, $image['name']);
-    header('Location: ?action=admin_articles');
+    $articleModel->addArticle($data, $name); // On insère en BD les informations de l'article
+    header('Location: ?action=admin_articles'); //On redirige l'utilisateur vers l'espace admin
 }
 
 // Fonction qui est appelée depuis le script d'ajout d'un utilisateur
@@ -107,4 +112,17 @@ function login(){
 function logout(){
     session_unset();
     header('Location: ?');
+}
+
+function addImage($image){
+    $name = explode('.', $image['name']);
+    $name = uniqid() . '.' . $name[1]; //On génère un nom aléatoire pour l'image
+    $dest = __DIR__ . '/../assets/images/uploads/' . $name; //On reconstiture le répertoire final ou sera uploadé l'image
+    move_uploaded_file($image['tmp_name'], $dest); //On effectue la copie de l'image
+    return $name;
+}
+
+function deleteImage($article){
+    $image = $dest = __DIR__ . '/../assets/images/uploads/' . $article['picture'];
+    unlink($image);
 }

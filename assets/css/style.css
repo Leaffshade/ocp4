@@ -22,15 +22,7 @@ nav ul
     display: flex;
 }
 
-nav li
-{
-	/*margin-right: 254px;*/
-	margin-right: 33px; /* Espace mots menu */
-	margin-left: 112px;
-}
-
 nav a{
-	
 	/*position: absolute;*/ /* Permet au menu de s'aligner avec small profil picture */
 	text-decoration: none;
     display: block;
@@ -41,7 +33,6 @@ nav a{
 	/* padding-left: 5px; */
 	padding-right: 10px;
 	padding-left: 10px;
-
 }
 
 nav.menu{
@@ -83,23 +74,30 @@ nav.menu a:hover {
 
 h2 {
 	font-size: 17px;
+	font-weight: bold;
+	font-size: 16px;
 }
 
+.titular{
+	background-color: #11a8ab;
+}
 h3{
 	font-weight: bold;
 	font-size: 25px;
 	color: #11a8ab;
 	width: auto;
-	margin-left: 10px;
+	/* margin-left: 10px; */
+	margin-left: 525px;
 }
 
 
 h4 {
-	font-size: 15px;
+	font-size: 18px;
 	text-align: justify;
 	width: 94%;
-	margin-left: 10px;
+	margin-left: 40px;
 	color: white;
+	margin-bottom: 25px;
 }
 
 h5 {
@@ -107,15 +105,27 @@ h5 {
 	text-align: justify;
 	margin-left: 25px;
 	margin-right: 33px;
+	margin-bottom: 35px;
+}
+
+h6{
+	margin-left: 63px;
 }
 
 img { /*photo */
 	border-radius: 5px 5px 5px 5px;
-	width: 100%;
+	width: 94%;
 	box-shadow: 7px 4px 9px 7px black;
 	margin-top: 0px;
 	margin-bottom: 50px;
+	margin-left: 16px;
 }
+
+.profile-picture .img1 {
+	margin-left: 0;
+    width: 100%;
+}
+
 
 h2, p, a, span{
 	color: #fff;
@@ -182,6 +192,15 @@ h2, p, a, span{
 }
 
 
+.account_block{
+	padding-bottom: 102%;
+	background: #394264;
+	color: #fff;
+	border: solid 1px #1f253d;
+	border-radius: 5px;	
+	box-shadow: 4px 1px 10px 1px black;
+}
+
 .profile-picture {
 	border-radius: 100%;
 	overflow: hidden;
@@ -219,8 +238,7 @@ h2, p, a, span{
 }
 
 .container{ /* bloc articles */
-	margin-bottom: 15px;
-	
+	margin-bottom: 15px;	
 }
 
 /* Menu gauche */
@@ -229,7 +247,8 @@ h2, p, a, span{
 	background: #11A8AB;
 	margin-top: -10px;
 	border-radius: 5px 5px 0 0;
-	padding: 10px 0;
+	/* padding: 10px 0; */
+	padding: 15px 0;
 	font-weight: bolder;
 }
 

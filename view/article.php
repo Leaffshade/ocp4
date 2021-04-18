@@ -6,6 +6,7 @@
     <title>Accueil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -42,7 +43,7 @@
             <!--<img src="<?= $articleDetail['picture'] ?>" width="100%" />-->
             <img src="./assets/images/uploads/<?= $articleDetail['picture'] ?>"/>
         <?php } ?>
-        <p><?= $articleDetail['content'] ?></p>
+        <h4><?= $articleDetail['content'] ?></h4>
     </div>
   
 <!-- RIGHT CONTAINER -->      
@@ -50,60 +51,41 @@
     <div class="right-container">
         <section>  
             <aside> 
-                <form action="Page1.php" method="POST">
-                    <div class="account block">
+            <form action="?action=login" method="POST">
+                    <div class="account_block">
                         <h2 class="titular">CONNEXION A VOTRE COMPTE</h2>
 
-                    <div class="formulaire d-flex mb-2 pe-2">
-                        <div class="px-2 d-flex align-items-center">
-                            <i class="fas fa-envelope-open-text"></i>
+                        <div class="formulaire d-flex mb-2 pe-2">
+                            <div class="px-2 d-flex align-items-center">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                                <input type="text" placeholder="Laura" class="email text-input" name="login">
                         </div>
-                    
-                        <input type="text" placeholder="votrenom@gmail.com" class="email text-input">
-                    
-                    </div>  
-                    <!--<div class="logoform">
-                        <i class="fas fa-envelope-open-text"></i>
-                    </div>-->
-                
-                    <div class="formulaire d-flex pe-2 mb-2">
-                        <div class="px-2 d-flex align-items-center">
-                            <i class="fas fa-lock"></i>
+
+                        <div class="formulaire d-flex pe-2 mb-2">
+                            <div class="px-2 d-flex align-items-center">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                                <input type="password" placeholder="Mot de passe" class="password text-input" name="password">
+                        </div>  
+
+                        <div>
+                            <?php if(isset($_GET['login_error'])) { ?>
+                                <h6><?php echo $_GET['login_error']; ?></h6>
+                            <?php } ?>
                         </div>
-                        <input type="text" placeholder="Mot de passe" class="password text-input">
-
-                        <?php
-        if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "kangourou") // Si le mot de passe est bon
-        {
-        // On affiche les codes
-        ?>
-            <h1>Voici les codes d'accès :</h1>
-            <p><strong>CRD5-GTFT-CK65-JOPM-V29N-24G1-HH28-LLFV</strong></p> 
-
-            <?php
-        }
-        else // Sinon, on affiche un message d'erreur
-        {
-            // echo '<p>Mot de passe incorrect</p>';
-        }
-        ?>
-    </div>    
-                <!-- <div class="logoform">
-                        <i class="fas fa-lock"></i>
-                    </div>-->
             
-    <div class="d-flex justify-content-center">
-        <a class="sign-in btn btn-outline-success">S'identifié</a>
-    </div>
-            
-        <p class="scnd-font-color text-center"><a href="?">Mot de passe oublié ?</a></p>
+                    <div class="d-flex justify-content-center" >
+                        <button type="submit" class="sign-in btn btn-outline-success">S'identifier</a>
+                    </div>
+            <div class="mp_oublie">
+                    <p class="scnd-font-color text-center"><a href="?">Mot de passe oublié ?</a></p>
                 </form>
             </aside>
 </div> 
 </div>
     </section>      
 <!-- </body> -->
-<script src="js.js"></script>
 
     <footer>
     <!-- Placez ici le contenu du pied de page -->

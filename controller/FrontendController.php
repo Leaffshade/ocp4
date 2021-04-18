@@ -14,6 +14,8 @@ function home(){
 }
 
 function articles(){
+    $article = new Article();
+    $articles = $article->getArticles();
     require_once('./view/articles.php');
 }
 

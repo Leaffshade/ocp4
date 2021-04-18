@@ -8,8 +8,8 @@ class Article extends Db {
 
     public function addArticle($data, $imageName){
         //Requetes SQL INSERT dans la table comment (fonctionnalité admin d'ajout d'un nouvel article)
-        $query = $this->db->prepare('INSERT INTO article(title, content, picture, published_date, user_id) VALUES(?, ?, ?, NOW(), 1)');
-        $res = $query->execute([$data['title'], $data['description'], $imageName]);
+        $query = $this->db->prepare('INSERT INTO article(title, content, picture, published_date, user_id) VALUES(?, ?, ?, NOW(), ?)');
+        $res = $query->execute([$data['title'], $data['description'], $imageName, $_SESSION['id']]);
         return $res;
     }
 
@@ -29,11 +29,11 @@ class Article extends Db {
        
     }
 
-    public function updateArticle($id, $data){
+    public function updateArticle($id, $data, $imageName){
 
         //Requetes SQL UPDATE dans la table article pour modifier un article (admin)
-        $query = $this->db->prepare('UPDATE article SET title = ?, content = ? WHERE id = ?');
-        $query->execute([$data['title'], $data['description'], $id]);
+        $query = $this->db->prepare('UPDATE article SET title = ?, content = ?, picture = ? WHERE id = ?');
+        $query->execute([$data['title'], $data['description'], $imageName, $id]);
        
     }
 
