@@ -42,8 +42,6 @@
                                 <i class="fas fa-trash"></i>
                             </a>
                        </td>
-                       <!-- <a href="?action=add_article&article_id=<?php echo $article['id']; ?>" class="btn">
-                            <i class="fal fa-plus-circle"></i> -->
                     </tr>   
                 <?php } ?>             
             <tbody>
@@ -61,17 +59,6 @@
     </section>    
 </body>
 <script src="js.js"></script>
-
-<!-- Listing des 5 derniers tweets -->
-
-    <!-- <ul>
-        <li>
-            <a href="?">Accueil</a>
-            <a href="?action=tweets">Listing</a>
-            <a href="?action=article">Détail</a>
-        </li>
-    </ul>
-    <h1>Accueil</h1> -->
 
     <footer>
     <!-- Placez ici le contenu du pied de page -->

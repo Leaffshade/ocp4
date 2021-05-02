@@ -32,38 +32,25 @@
 <div class="middle-container container">
 
     <div class="block w-100">
-      <form method="POST" action="?action=edit_article_action&article_id=<?php echo $article['id']; ?>"  enctype="multipart/form-data">
-        <div>
-            <label>Titre</label>
-            <input type="text" name="title" value="<?php echo $article['title'] ?>" class="form-control">
-        </div>
-        <div>
-            <label>Image</label>
-            <input type="file" name="image" value="" class="form-control">
-        </div>
-        <div>
-            <label>Article</label>
-            <textarea rows="10" class="form-control" name="description">
+        <form method="POST" action="?action=edit_article_action&article_id=<?php echo $article['id']; ?>"  enctype="multipart/form-data">
+            <div>
+                <label>Titre</label>
+                    <input type="text" name="title" value="<?php echo $article['title'] ?>" class="form-control">
+            </div>
+            <div>
+                <label>Image</label>
+                    <input type="file" name="image" value="" class="form-control">
+            </div>
+            <div>
+                <label>Article</label>
+                    <textarea rows="10" class="form-control" name="description">
                 <?php echo $article['content'] ?>
             </textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
+            </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+    </div>
 </div>
-</div>
-
-<!-- RIGHT CONTAINER -->      
-  
-<!-- Listing des 5 derniers tweets -->
-
-    <!-- <ul>
-        <li>
-            <a href="?">Accueil</a>
-            <a href="?action=tweets">Listing</a>
-            <a href="?action=article">Détail</a>
-        </li>
-    </ul>
-    <h1>Accueil</h1> -->
 
     <footer>
     <!-- Placez ici le contenu du pied de page -->

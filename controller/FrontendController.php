@@ -49,7 +49,6 @@ function notifyComment($commentId, $articleId){
 
 function showImage(){
     $image  = __DIR__ . '/../assets/images/uploads/' . $_GET['imageName'];
-   // var_dump();
     //$image  = __DIR__ . '/../assets/images/jeansmallpicture.jpg';
     header('Content-Type: ' . mime_content_type ($image));
     //header('Content-Disposition: attachment; filename="' .$_GET['imageName'] . '"');

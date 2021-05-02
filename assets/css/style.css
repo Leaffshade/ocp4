@@ -9,8 +9,8 @@ body {
 }
 
 h1 {
-	font-family: Time New Roman;
-	font-size: 40px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 33px;
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -66,10 +66,47 @@ nav.menu a:hover {
 	color: white;
 }
 
+.fa-edit:hover{
+	color: greenyellow;
+	transition: .2s ease-in;
+}
+
+.fa-trash:hover{
+color: red;
+transition: .2s ease-in;
+}
+
 .logoform {
     margin-top: -26%;
     margin-bottom: 15%;
     margin-left: 3%;
+}
+
+a{
+	font-weight: bold;
+	font-family: Time New Roman;
+	display: flex;
+	justify-content: center;
+}
+
+a:hover{
+	color: #44cde2;
+	transition: .2s ease-in;
+}
+
+
+p{
+	width: 94%;
+	font-weight: normal;
+}
+
+.gestion{
+	color: white;
+	border-color: #1f253d;
+	background-color: #1f253d;
+	box-shadow: black 1px 1px 3px 1px;
+	-webkit-transition: all .3s linear;
+	border-radius: 5px;
 }
 
 h2 {
@@ -116,14 +153,15 @@ img { /*photo */
 	border-radius: 5px 5px 5px 5px;
 	width: 94%;
 	box-shadow: 7px 4px 9px 7px black;
-	margin-top: 0px;
+	margin-top: 35px;
 	margin-bottom: 50px;
 	margin-left: 16px;
 }
 
 .profile-picture .img1 {
 	margin-left: 0;
-    width: 100%;
+	width: 100%;
+	margin-top: 0 !important;
 }
 
 
@@ -178,6 +216,7 @@ h2, p, a, span{
 	background-color: #1f253d;
 	box-shadow: black 1px 1px 3px 1px;
 	-webkit-transition: all .3s linear;
+	margin-top: 10%; /*Ajouter le 20/04/21*/
 }
 
 	.btn-outline-success:hover {
@@ -189,16 +228,18 @@ h2, p, a, span{
 
 .mp_oublie a:hover{
 	color: #44cde2;
+	transition: .2s ease-in;
 }
 
 
 .account_block{
-	padding-bottom: 102%;
-	background: #394264;
-	color: #fff;
-	border: solid 1px #1f253d;
-	border-radius: 5px;	
-	box-shadow: 4px 1px 10px 1px black;
+    padding-bottom: 118%; /*Ajouter le 20/04/21*/
+    background: #394264;
+    color: #fff;
+    border: solid 1px #1f253d;
+    border-radius: 5px;
+    box-shadow: 4px 1px 10px 1px black;
+    width: 119%; /*Ajouter le 20/04/21*/
 }
 
 .profile-picture {
@@ -261,8 +302,9 @@ h2, p, a, span{
 	border-bottom: 1px solid #1F253D;
 }
 
-.articles-list li a {
+.articles-list li a { /*Menu Gauche*/
 	transition: background-color .5s ease-in;
+	/* margin-left: 35%; */
 }
 
 .articles-list li a:hover {
@@ -281,18 +323,63 @@ textarea { /* Formulaire commentaire */
 	margin-left: 69px;
 	margin-top: 15px;
 	box-shadow: 4px 1px 10px 1px black;
+
+
+	/* ------------------- AJOUT 26/04/21 ---------------------- */
+width: 75%;
+
 }
+
+.tox-tinymce{
+	width: 80%;
+    margin-left: 69px;
+	border-radius: 5px !important;
+	box-shadow: 4px 1px 10px 1px black !important;
+}
+
+.btn-primary{
+	color: white;
+	border-color: #1f253d;
+	background-color: #1f253d;
+	box-shadow: black 1px 1px 3px 1px;
+	-webkit-transition: all .3s linear;
+	/* margin-top: 10%; */
+	margin-left: 69px;
+	margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.btn-primary:hover{
+	background-color: #50597b;
+	color: white;
+	border-color:  #1f253d;;
+}
+
+/* ------------------------------- FIN AJOUT -------------------------------------- */
 
 .Block_gestion_article{
 		padding-bottom: 50px;
 }
 
-
-.Block_gestion_article :hover{
-	color: #44cde2;
+.form-article label  {
+	min-width: 100px;
 }
-/* .fas fa-trash a:hover{
-	color: red;
-} */
 
+.form-article input {
+	width: 50% !important;
+	background: white;
+}
 
+.btn text-white{
+	box-shadow: inset 0px -4px 0px #171b2d;
+	font-size: 17px;
+	background-color: #50597b;
+	color: white;
+	transition: .2s ease-in;
+	text-transform: uppercase;
+}
+
+td{
+	border-radius: 5px;
+	box-shadow: 4px 1px 10px 1px black;
+}

@@ -6,8 +6,8 @@ class Comment extends Db {
 
     // Methodes CRUD : Create - Read -  Update - Delete
 
-    public function addComment($description, $author, $articleId){
-        //Requetes SQL INSERT dans la table comment (fonctionnalité admin d'ajout d'un nouveeau commentaire)
+ public function addComment($description, $author, $articleId){
+        //Requetes SQL INSERT dans la table comment (fonctionnalité admin d'ajout d'un nouveau commentaire)
         $query = $this->db->prepare('INSERT INTO comment(description, date, author, article_id, notified) VALUES(?, NOW(), ?, ?, 0)');
         $res = $query->execute([$description, $author, $articleId]);
         return $res;

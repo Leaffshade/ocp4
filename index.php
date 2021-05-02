@@ -1,12 +1,13 @@
-
 <?php
+
+
+if(session_id() === '') {
+    session_start();
+}
 
 // Routeur: Décider en fonction de l'URL, la fonction du controleur à appeler
 require_once('./controller/FrontendController.php');
 require_once('./controller/AdminController.php');
-
-session_start();
-
 
 if(!isset( $_GET['action'])){
     //Afficher la page d'accueil en appelant la fonction home du controler
@@ -72,7 +73,6 @@ else if($_GET['action'] == 'add_article_action') {
 }
 
 else if($_GET['action'] == 'image') {
-    //Todo: A ajuster en fonction de l'hébergeur
     showImage();
 } 
 else if($_GET['action'] == 'login') {

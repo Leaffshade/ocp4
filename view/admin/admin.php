@@ -10,13 +10,12 @@
 
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-    <body>
 
+<body>
 <!-- BLOG -->
 <div class="main-container">
 
 <?php include_once(__DIR__ . '/../header.php'); ?>
-     
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container">
@@ -24,43 +23,31 @@
     <div class="block w-100">
         <nav>
             <ul class="d-flex flex-wrap">
-                <li class="w-100">
-                    <a href="?action=admin_articles">Gestion des articles</a>
+                <li class="w-100 mb-3">
+                    <button class="gestion" type=button>
+                        <a href="?action=admin_articles">Gestion des articles</a>
+                    </button>
                 </li>
-                <li class="w-100">
-                    <a href="?action=admin_comments">Gestion des commentaires</a>
+                <li class="w-100 mb-3">
+                    <button class="gestion" type=button>
+                        <a href="?action=admin_comments">Gestion des commentaires</a>
+                    </button>
                 </li>
-                <li class="w-100">
-                    <a href="?action=logout">Déconnexion</a>
+                <li class="w-100 mb-3"> <!-- taille bouton-->
+                    <button class="gestion" type=button>
+                        <a href="?action=logout">Déconnexion</a>
+                    </button>
                 </li>
             </ul>
-        </nav>
-        
-        
+        </nav>     
     </div>
-
-<!-- RIGHT CONTAINER -->      
-
-
-    </section>
-       
+   
 </body>
 <script src="js.js"></script>
-
-<!-- Listing des 5 derniers tweets -->
-
-    <!-- <ul>
-        <li>
-            <a href="?">Accueil</a>
-            <a href="?action=tweets">Listing</a>
-            <a href="?action=article">Détail</a>
-        </li>
-    </ul>
-    <h1>Accueil</h1> -->
 
     <footer>
     <!-- Placez ici le contenu du pied de page -->
     </footer>
 
-    </body>
+</body>
 </html>

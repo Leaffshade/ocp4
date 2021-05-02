@@ -32,22 +32,22 @@
 <div class="middle-container container">
 
     <div class="block w-100">
-      <form method="POST" action="?action=add_article_action" enctype="multipart/form-data">
-        <div>
-            <label>Titre</label>
-            <input type="text" name="title" value="" class="form-control">
+      <form class="form-article" method="POST" action="?action=add_article_action" enctype="multipart/form-data">
+        <div class='d-flex align-items-center mb-4'>
+            <label class="text-white">Titre</label>
+            <input type="text" name="title" value="" class="form-control m-0">
+        </div>
+        <div class="d-flex align-items-center">
+            <label class="text-white">Image</label>
+            <input type="file" name="image" value="" class="form-control m-0">
         </div>
         <div>
-            <label>Image</label>
-            <input type="file" name="image" value="" class="form-control">
-        </div>
-        <div>
-            <label>Article</label>
+            <label class="text-white">Article</label>
             <textarea rows="10" class="form-control" name="description">
 
             </textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" class="btn btn-primary color: #11a8ab">Envoyer</button>
     </form>
 </div>
 </div>

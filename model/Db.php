@@ -6,7 +6,9 @@ class Db {
     protected $db;
 
     public function __construct(){
-                $this->db = new PDO('mysql:dbname=blog;host=127.0.0.1', 'root', '');
+        $env = parse_ini_file(__DIR__ . '/../.env');
+        
+                $this->db = new PDO('mysql:dbname=' . $env['db_name'] . ';host=' . $env['db_host'], $env['db_user'], $env['db_password']);
            
            
        

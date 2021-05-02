@@ -26,13 +26,19 @@
 
         <ul class="ps-0 articles-list">
             <?php
-                foreach($articles as $article){ ?>
+                $i = 0;
+                foreach($articles as $article){
+                    if($i >= 5) 
+                        break;
+                    ?>
                     <li>
                         <a class="d-block py-3 px-2" href="?action=article&article_id=<?= $article['id'] ?>">
                             <?= $article['title'] ?>
                         </a>
                     </li>
-            <?php } ?>
+            <?php
+                $i++;
+         } ?>
         </ul>
         
     </div>

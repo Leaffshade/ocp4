@@ -21,7 +21,7 @@
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container">
 
-    <div class="block w-100">
+    <div class="block w-100 mb-3">
             <h1>Gestion des commentaires</h1>
             
             <table class='table table-bordered  table-dark w-50 mx-auto'>

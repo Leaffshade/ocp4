@@ -7,12 +7,14 @@ require_once('./model/Comment.php');
 
 
 function adminHome(){
+
     //Si la session existe, je suis connecté, donc je peux accéder à l'espace admin
     if(isset($_SESSION['id'])){
         require_once('./view/admin/admin.php');
     } else {
-        header('Location: ?');
+        header('Location: ?');  
     }
+    die();
     
 }
 
@@ -43,7 +45,7 @@ function deleteComment($commentId){
 }
 
 function deleteArticle($articleId){
-    $articleModel = new Article(); // Je crée un objet de type article qui fait référence à mon modèle d'article permettant d'interagir avec la BD
+    $articleModel = new Article(); 
     $article = $articleModel->getArticle($articleId);
     deleteImage($article);
     $article = $articleModel->deleteArticle($articleId);
@@ -93,7 +95,6 @@ function createUser($login, $password) {
 }
 
 function login(){
-    var_dump($_POST);
     $userModel = new User();
     $user = $userModel->login($_POST['login']);
     if(!$user){
@@ -107,6 +108,7 @@ function login(){
     }
     $_SESSION['id'] = $user['id'];
     header('Location: ?action=admin_home');
+    die();
 }
 
 function logout(){

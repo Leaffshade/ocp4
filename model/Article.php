@@ -16,7 +16,7 @@ class Article extends Db {
     public function getArticles(){
         //Requetes SQL SELECT dans la table article pour récupérer tous les articles (page index)
         $query = $this->db->prepare('SELECT * FROM article');
-        $query->execute();
+        $query->execute([]);
         return $query->fetchAll();
     }
 
