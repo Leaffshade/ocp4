@@ -15,7 +15,7 @@
 <!-- BLOG -->
 <div class="main-container">
 
-<?php include_once(__DIR__ . '/../header.php'); ?>
+<?php include_once __DIR__ . '/../header.php'; ?>
      
 
 <!-- MIDDLE-CONTAINER -->
@@ -26,14 +26,18 @@
             
             <table class='table table-bordered  table-dark w-50 mx-auto'>
             <tbody>
-                <?php foreach($comments as $comment){ ?>
+                <?php foreach ($comments as $comment) { ?>
                     <tr>
-                        <td> <?php echo $comment['description'] ?></td>
+                        <td> <?php echo $comment['description']; ?></td>
                        <td>
-                       <a href="?action=notnotify_comment&comment_id=<?php echo $comment['id']; ?>" class="btn">
+                       <a href="?action=notnotify_comment&comment_id=<?php echo $comment[
+                           'id'
+                       ]; ?>" class="btn">
                             <i class="fas fa-check"></i>
                         </a>
-                        <a href="?action=delete_comment&comment_id=<?php echo $comment['id']; ?>" class="btn">
+                        <a href="?action=delete_comment&comment_id=<?php echo $comment[
+                            'id'
+                        ]; ?>" class="btn">
                             <i class="fas fa-trash"></i>
                         </a>
                        </td>

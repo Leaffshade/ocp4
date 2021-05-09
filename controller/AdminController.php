@@ -1,51 +1,52 @@
 <?php
 
-require_once('./model/User.php');
-require_once('./model/Article.php');
-require_once('./model/Comment.php');
+require_once './model/User.php';
+require_once './model/Article.php';
+require_once './model/Comment.php';
 
-
-
-function adminHome(){
-
+function adminHome()
+{
     //Si la session existe, je suis connecté, donc je peux accéder à l'espace admin
-    if(isset($_SESSION['id'])){
-        require_once('./view/admin/admin.php');
+    if (isset($_SESSION['id'])) {
+        require_once './view/admin/admin.php';
     } else {
-        header('Location: ?');  
+        header('Location: ?');
     }
     die();
-    
 }
 
-function adminArticles(){
-    
+function adminArticles()
+{
     $articleModel = new Article(); // Je crée un objet de type article qui fait référence à mon modèle d'article permettant d'interagir avec la BD
     $articles = $articleModel->getArticles();
-    require_once('./view/admin/admin-articles.php');
+    require_once './view/admin/admin-articles.php';
 }
 
-function adminComments(){
+function adminComments()
+{
     $commentModel = new Comment(); // Je crée un objet de type comment qui fait référence à mon modèle de commentaire permettant d'interagir avec la BD
     $comments = $commentModel->getNotifiedComments();
-    require_once('./view/admin/admin-comments.php');
+    require_once './view/admin/admin-comments.php';
 }
 
-function editArticle($articleId){
+function editArticle($articleId)
+{
     $articleModel = new Article(); // Je crée un objet de type article qui fait référence à mon modèle d'article permettant d'interagir avec la BD
     $article = $articleModel->getArticle($articleId);
-    require_once('./view/admin/admin-edit.php');
+    require_once './view/admin/admin-edit.php';
 }
 
-function deleteComment($commentId){
+function deleteComment($commentId)
+{
     $commentModel = new Comment(); // Je crée un objet de type comment qui fait référence à mon modèle de commentaire permettant d'interagir avec la BD
     $comment = $commentModel->deleteComment($commentId);
     header('Location: ?action=admin_comments');
     // require_once('./view/admin/admin-comments.php');
 }
 
-function deleteArticle($articleId){
-    $articleModel = new Article(); 
+function deleteArticle($articleId)
+{
+    $articleModel = new Article();
     $article = $articleModel->getArticle($articleId);
     deleteImage($article);
     $article = $articleModel->deleteArticle($articleId);
@@ -53,14 +54,16 @@ function deleteArticle($articleId){
     // require_once('./view/admin/admin-article.php');
 }
 
-function notnotifyComment($commentId){
+function notnotifyComment($commentId)
+{
     $commentModel = new Comment(); // Je crée un objet de type comment qui fait référence à mon modèle de commentaire permettant d'interagir avec la BD
     $comment = $commentModel->notnotifyComment($commentId);
     header('Location: ?action=admin_comments');
     // require_once('./view/admin/admin-comments.php');
 }
 
-function editArticleAction() {
+function editArticleAction()
+{
     $articleModel = new Article();
     $data = $_POST;
     $image = $_FILES['image']; //On récupère le fichier image uploadé
@@ -72,13 +75,14 @@ function editArticleAction() {
 }
 
 // Fonction qui permet l'affichage de la page d'ajout d'un article
-function addArticle(){
-    require_once('./view/admin/admin-add.php');
+function addArticle()
+{
+    require_once './view/admin/admin-add.php';
 }
 
-
 // Fonction qui permet de valider l'ajout d'un article
-function addArticleAction(){
+function addArticleAction()
+{
     $data = $_POST; //On récupère les informations du formulaire que l'on stock dans une variable $data
     $image = $_FILES['image']; //On récupère le fichier image uploadé
     $imageName = addImage($image);
@@ -88,21 +92,23 @@ function addArticleAction(){
 }
 
 // Fonction qui est appelée depuis le script d'ajout d'un utilisateur
-function createUser($login, $password) {
+function createUser($login, $password)
+{
     $user = new User();
     $res = $user->addUser($login, $password);
     echo $res;
 }
 
-function login(){
+function login()
+{
     $userModel = new User();
     $user = $userModel->login($_POST['login']);
-    if(!$user){
+    if (!$user) {
         header('Location: ?login_error=Utilisateur non trouvé');
         die();
     }
     $res = password_verify($_POST['password'], $user['password']);
-    if(!$res){
+    if (!$res) {
         header('Location: ?login_error=Mot de passe incorrect');
         die();
     }
@@ -111,12 +117,14 @@ function login(){
     die();
 }
 
-function logout(){
+function logout()
+{
     session_unset();
     header('Location: ?');
 }
 
-function addImage($image){
+function addImage($image)
+{
     $name = explode('.', $image['name']);
     $name = uniqid() . '.' . $name[1]; //On génère un nom aléatoire pour l'image
     $dest = __DIR__ . '/../assets/images/uploads/' . $name; //On reconstiture le répertoire final ou sera uploadé l'image
@@ -124,7 +132,9 @@ function addImage($image){
     return $name;
 }
 
-function deleteImage($article){
-    $image = $dest = __DIR__ . '/../assets/images/uploads/' . $article['picture'];
+function deleteImage($article)
+{
+    $image = $dest =
+        __DIR__ . '/../assets/images/uploads/' . $article['picture'];
     unlink($image);
 }

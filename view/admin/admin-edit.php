@@ -25,17 +25,21 @@
 <!-- BLOG -->
 <div class="main-container">
 
-<?php include_once(__DIR__ . '/../header.php'); ?>
+<?php include_once __DIR__ . '/../header.php'; ?>
      
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container">
 
     <div class="block w-100">
-        <form method="POST" action="?action=edit_article_action&article_id=<?php echo $article['id']; ?>"  enctype="multipart/form-data">
+        <form method="POST" action="?action=edit_article_action&article_id=<?php echo $article[
+            'id'
+        ]; ?>"  enctype="multipart/form-data">
             <div>
                 <label>Titre</label>
-                    <input type="text" name="title" value="<?php echo $article['title'] ?>" class="form-control">
+                    <input type="text" name="title" value="<?php echo $article[
+                        'title'
+                    ]; ?>" class="form-control">
             </div>
             <div>
                 <label>Image</label>
@@ -44,7 +48,7 @@
             <div>
                 <label>Article</label>
                     <textarea rows="10" class="form-control" name="description">
-                <?php echo $article['content'] ?>
+                <?php echo $article['content']; ?>
             </textarea>
             </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>

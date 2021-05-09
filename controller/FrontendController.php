@@ -1,25 +1,26 @@
 <?php
 
-require_once('./model/User.php');
+require_once './model/User.php';
 
-require_once('./model/Article.php');
-require_once('./model/Comment.php');
+require_once './model/Article.php';
+require_once './model/Comment.php';
 
-
-
-function home(){
+function home()
+{
     $article = new Article();
     $articles = $article->getArticles();
-    require_once('./view/home.php');
+    require_once './view/home.php';
 }
 
-function articles(){
+function articles()
+{
     $article = new Article();
     $articles = $article->getArticles();
-    require_once('./view/articles.php');
+    require_once './view/articles.php';
 }
 
-function article($articleId){
+function article($articleId)
+{
     // TODO: Récupérér le détail d'un article avec le modèle Article
     $articleModel = new Article(); // Je crée un objet de type article qui fait référence à mon modèle d'article permettant d'interagir avec la BD
     $articles = $articleModel->getArticles(); // J'appelle la méthode qui me permet de récuperer tous les articles via un select en BD
@@ -27,19 +28,24 @@ function article($articleId){
 
     $commentModel = new Comment();
     $comments = $commentModel->getCommentsByArticleId($articleId);
-   
-    require_once('./view/article.php'); // On inclut la Vue qui utilisera les variables articles et article (pour le détail du milieu)
+
+    require_once './view/article.php'; // On inclut la Vue qui utilisera les variables articles et article (pour le détail du milieu)
 }
 
-function addComment($articleId){
-   
+function addComment($articleId)
+{
     $commentModel = new Comment();
-    $commentModel->addComment($_POST['description'], $_POST['author'], $articleId);
+    $commentModel->addComment(
+        $_POST['description'],
+        $_POST['author'],
+        $articleId
+    );
     //Redirection vers la page de l'article concerné
     header('location: ?action=article&article_id=' . $articleId);
 }
 
-function notifyComment($commentId, $articleId){
+function notifyComment($commentId, $articleId)
+{
     $commentModel = new Comment();
     $commentModel->notifyComment($commentId);
 
@@ -47,12 +53,12 @@ function notifyComment($commentId, $articleId){
     header('location: ?action=article&article_id=' . $articleId);
 }
 
-function showImage(){
-    $image  = __DIR__ . '/../assets/images/uploads/' . $_GET['imageName'];
+function showImage()
+{
+    $image = __DIR__ . '/../assets/images/uploads/' . $_GET['imageName'];
     //$image  = __DIR__ . '/../assets/images/jeansmallpicture.jpg';
-    header('Content-Type: ' . mime_content_type ($image));
+    header('Content-Type: ' . mime_content_type($image));
     //header('Content-Disposition: attachment; filename="' .$_GET['imageName'] . '"');
     header('Content-Length: ' . filesize($image));
     readfile($image);
-    
 }

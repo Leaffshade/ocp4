@@ -15,7 +15,7 @@
 <!-- BLOG -->
 <div class="main-container">
 
-<?php include_once(__DIR__ . '/../header.php'); ?>
+<?php include_once __DIR__ . '/../header.php'; ?>
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container">
@@ -30,15 +30,19 @@
             -->
         <table class='table table-bordered  table-dark w-50 mx-auto'>
             <tbody>
-                <?php foreach($articles as $article){ ?>
+                <?php foreach ($articles as $article) { ?>
                     <tr>
-                        <td> <?php echo $article['title'] ?></td>
+                        <td> <?php echo $article['title']; ?></td>
                         <td>
-                            <a href="?action=edit_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                            <a href="?action=edit_article&article_id=<?php echo $article[
+                                'id'
+                            ]; ?>" class="btn">
                                 <i class="fas fa-edit"></i>
                             </a>
                        
-                            <a href="?action=delete_article&article_id=<?php echo $article['id']; ?>" class="btn">
+                            <a href="?action=delete_article&article_id=<?php echo $article[
+                                'id'
+                            ]; ?>" class="btn">
                                 <i class="fas fa-trash"></i>
                             </a>
                        </td>

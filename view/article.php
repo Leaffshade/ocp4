@@ -14,7 +14,7 @@
 
 <!-- BLOG -->
 <div class="main-container">
- <?php include_once('header.php'); ?>
+ <?php include_once 'header.php'; ?>
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container d-flex flex-wrap flex-md-nowrap">
@@ -26,36 +26,44 @@
 
         <ul class="ps-0 articles-list">
             <?php
-                $i = 0;
-                foreach($articles as $article){
-                    if($i >= 5){
-                        break;
-                    }
-                    ?>
+            $i = 0;
+            foreach ($articles as $article) {
+                if ($i >= 5) {
+                    break;
+                } ?>
                     <li>
-                        <a class="d-block py-3 px-2" href="?action=article&article_id=<?= $article['id'] ?>">
+                        <a class="d-block py-3 px-2" href="?action=article&article_id=<?= $article[
+                            'id'
+                        ] ?>">
                             <?= $article['title'] ?>
                         </a>
                     </li>
-            <?php 
-            $i++;
-        } ?>
+            <?php $i++;
+            }
+            ?>
         </ul>
         
     </div>
     <div class="block w-50 me-3">
         <h1><?= $articleDetail['title'] ?></h1>
        
-        <?php if(isset($articleDetail['picture']) && $articleDetail['picture'] !== "NULL") { ?>
+        <?php if (
+            isset($articleDetail['picture']) &&
+            $articleDetail['picture'] !== 'NULL'
+        ) { ?>
             <!--<img src="<?= $articleDetail['picture'] ?>" width="100%" />-->
-            <img src="./assets/images/uploads/<?= $articleDetail['picture'] ?>"/>
+            <img src="./assets/images/uploads/<?= $articleDetail[
+                'picture'
+            ] ?>"/>
         <?php } ?>
         <h4><?= $articleDetail['content'] ?></h4>
 
         <div>
             <h2>Commentaires</h2>
 
-    <form method="POST" action="?action=add_comment&article_id=<?= $articleDetail['id']?>">
+    <form method="POST" action="?action=add_comment&article_id=<?= $articleDetail[
+        'id'
+    ] ?>">
         <div>
             <label class="d-block text-white">Commentaire</label>
             <textarea class="w-75 form-control" name="description" rows="5"></textarea>
@@ -67,20 +75,27 @@
         <button class="btn btn-primary mt-2" type="submit">Envoyer</button>
     </form>
 
-    <?php 
-        if(count($comments) == 0) { ?>
+    <?php
+    if (count($comments) == 0) { ?>
             <p>Aucun commentaire</p>
         <?php }
 
-        foreach($comments as $comment){ ?>
-            <p><?php echo $comment['description']; ?> <br/> by <?= $comment['author'] ?></p>
+    foreach ($comments as $comment) { ?>
+            <p><?php echo $comment['description']; ?> <br/> by <?= $comment[
+     'author'
+ ] ?></p>
         
-            <?php if($comment['notified'] == 0) { ?>
-                <a href="?action=notify_comment&comment_id=<?php echo $comment['id']; ?>&article_id=<?php echo $articleDetail['id'] ?>" class="btn btn-danger">Signaler</a>
+            <?php if ($comment['notified'] == 0) { ?>
+                <a href="?action=notify_comment&comment_id=<?php echo $comment[
+                    'id'
+                ]; ?>&article_id=<?php echo $articleDetail[
+    'id'
+]; ?>" class="btn btn-danger">Signaler</a>
             <?php } else { ?>
                 <span>Déjà signalé</span>
             <?php } ?>
-        <?php } ?>
+        <?php }
+    ?>
         </div>
     </div>
   
@@ -108,7 +123,7 @@
                         </div>  
 
                         <div>
-                            <?php if(isset($_GET['login_error'])) { ?>
+                            <?php if (isset($_GET['login_error'])) { ?>
                                 <h6><?php echo $_GET['login_error']; ?></h6>
                             <?php } ?>
                         </div>

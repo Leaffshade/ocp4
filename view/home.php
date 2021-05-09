@@ -14,7 +14,7 @@
 
 <!-- BLOG -->
 <div class="main-container">
-<?php include_once('header.php'); ?>    
+<?php include_once 'header.php'; ?>    
 
 <!-- MIDDLE-CONTAINER -->
 <div class="middle-container container d-flex flex-wrap flex-md-nowrap">
@@ -26,22 +26,21 @@
 
         <ul class="ps-0 articles-list">
             <?php
-               
-                $i = 0;
-                foreach($articles as $article){ 
-                    if($i >= 5){
-                        break;
-                    }
-                    ?>
+            $i = 0;
+            foreach ($articles as $article) {
+                if ($i >= 5) {
+                    break;
+                } ?>
                     <li>
-                        <a class="d-block py-3 px-2" href="?action=article&article_id=<?= $article['id'] ?>">
+                        <a class="d-block py-3 px-2" href="?action=article&article_id=<?= $article[
+                            'id'
+                        ] ?>">
                             <?= $article['title'] ?>
                         </a>
                     </li>
-            <?php
-            $i++;
-            
-        } ?>      
+            <?php $i++;
+            }
+            ?>      
         </ul>
     </div>
 
@@ -90,7 +89,7 @@
                         </div>  
 
                         <div>
-                            <?php if(isset($_GET['login_error'])) { ?>
+                            <?php if (isset($_GET['login_error'])) { ?>
                                 <h6><?php echo $_GET['login_error']; ?></h6>
                             <?php } ?>
                         </div>
